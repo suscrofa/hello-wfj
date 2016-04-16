@@ -1,5 +1,5 @@
 /***
- * 1 Í³¼ÆÏß³ÌÖ´ĞĞÊ±¼ä
+ * 1 ç»Ÿè®¡çº¿ç¨‹æ‰§è¡Œæ—¶é—´
  */
 
 import java.io.BufferedReader;
@@ -78,7 +78,7 @@ public class LogAnalyse {
 			} // end of for
 		}// end of if(d.isDirectory())
 		else {
-			System.out.println("ÊäÈë²ÎÊı[" + filePath + "]²»ÊÇÎÄ¼şÂ·¾¶");
+			System.out.println("è¾“å…¥å‚æ•°[" + filePath + "]ä¸æ˜¯æ–‡ä»¶è·¯å¾„");
 		}
 
 	}
@@ -88,13 +88,13 @@ public class LogAnalyse {
 			tmp_bw.write(msg);
 			tmp_bw.newLine();
 		} catch (IOException e) {
-			System.out.println("·ÖÎö½á¹ûÎÄ¼şĞ´ÈëÒì³£");
+			System.out.println("åˆ†æç»“æœæ–‡ä»¶å†™å…¥å¼‚å¸¸");
 		}
 	}
 
 	public static void init(String fileNameWr) {
 
-		// ´´½¨Í³¼Æ½á¹ûÎÄ¼ş
+		// åˆ›å»ºç»Ÿè®¡ç»“æœæ–‡ä»¶
 		try {
 			tmp_fos = new FileOutputStream(fileNameWr);
 		} catch (IOException e) {
@@ -106,14 +106,14 @@ public class LogAnalyse {
 			tmp_bw = new BufferedWriter(
 					new OutputStreamWriter(tmp_fos, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("´´½¨·ÖÎö½á¹ûÎÄ¼şÊ± ÎÄ¼şÊä³ö×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("åˆ›å»ºåˆ†æç»“æœæ–‡ä»¶æ—¶ æ–‡ä»¶è¾“å‡ºå­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 
 	}
 
 	/**
-	 * ½«±¨ÎÄÍ³Ò»Ê±¿Ì´òÓ¡µÄÊı¾İ´òÔÚÒ»ĞĞ ÊµÏÖ
+	 * å°†æŠ¥æ–‡ç»Ÿä¸€æ—¶åˆ»æ‰“å°çš„æ•°æ®æ‰“åœ¨ä¸€è¡Œ å®ç°
 	 * 
 	 * @param fileRd
 	 * @param keyWord
@@ -133,7 +133,7 @@ public class LogAnalyse {
 		try {
 			br = new BufferedReader(new InputStreamReader(fis, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("ÎÄ¼ş¶ÁÈë×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("æ–‡ä»¶è¯»å…¥å­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 
@@ -149,7 +149,7 @@ public class LogAnalyse {
 
 			if (null != lineOfFile) {
 				if (lineOfFile.contains(keyWord)) {
-					if (sb.length() == 0) {// ¶ÁÈëÎÄ¼şµÄµÚÒ»ĞĞ
+					if (sb.length() == 0) {// è¯»å…¥æ–‡ä»¶çš„ç¬¬ä¸€è¡Œ
 						sb.append(lineOfFile);
 					} else {
 						writeToTmpFile(sb.toString());
@@ -170,7 +170,7 @@ public class LogAnalyse {
 				}
 			} else {
 				writeToTmpFile(sb.toString());
-				break; // ÎÄ¼ş¶ÁÈ¡½áÊø
+				break; // æ–‡ä»¶è¯»å–ç»“æŸ
 			}
 
 		}// end of while
@@ -178,7 +178,7 @@ public class LogAnalyse {
 	}
 
 	/*
-	 * ¹Ø±ÕÁÙÊ±ÖĞ¼äÎÄ¼ş
+	 * å…³é—­ä¸´æ—¶ä¸­é—´æ–‡ä»¶
 	 */
 	public static void tmp_finish() {
 		try {
@@ -194,7 +194,7 @@ public class LogAnalyse {
 	}
 
 	/**
-	 * ½«Í¬Ò»Ê±¿Ì´òÓ¡µÄ±¨ÎÄÖØĞÂ´òÔÚÒ»ĞĞ µ÷ÓÃ
+	 * å°†åŒä¸€æ—¶åˆ»æ‰“å°çš„æŠ¥æ–‡é‡æ–°æ‰“åœ¨ä¸€è¡Œ è°ƒç”¨
 	 * 
 	 * @param fileNameRd
 	 * @param fileNameWr
@@ -217,7 +217,7 @@ public class LogAnalyse {
 		this.matchString_start = matchString_start;
 		this.matchString_end = matchString_end;
 
-		// ´´½¨Í³¼Æ½á¹ûÎÄ¼ş
+		// åˆ›å»ºç»Ÿè®¡ç»“æœæ–‡ä»¶
 		try {
 			this.AnaResult_fos = new FileOutputStream(fileNameWr);
 		} catch (IOException e) {
@@ -229,11 +229,11 @@ public class LogAnalyse {
 			this.AnaResult_bw = new BufferedWriter(new OutputStreamWriter(
 					this.AnaResult_fos, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("´´½¨·ÖÎö½á¹ûÎÄ¼şÊ± ÎÄ¼şÊä³ö×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("åˆ›å»ºåˆ†æç»“æœæ–‡ä»¶æ—¶ æ–‡ä»¶è¾“å‡ºå­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 
-		// ´´½¨Í³¼ÆÈÕÖ¾ÎÄ¼ş
+		// åˆ›å»ºç»Ÿè®¡æ—¥å¿—æ–‡ä»¶
 		try {
 			this.AnaLog_fos = new FileOutputStream(analyseLogFilename);
 		} catch (IOException e) {
@@ -245,7 +245,7 @@ public class LogAnalyse {
 			this.AnaLog_bw = new BufferedWriter(new OutputStreamWriter(
 					this.AnaLog_fos, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("´´½¨·ÖÎöÈÕÖ¾ÎÄ¼şÊ± ÎÄ¼şÊä³ö×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("åˆ›å»ºåˆ†ææ—¥å¿—æ–‡ä»¶æ—¶ æ–‡ä»¶è¾“å‡ºå­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 	}
@@ -256,7 +256,7 @@ public class LogAnalyse {
 				+ "\"><field[^>]*>[^<]*");
 		Matcher matcher = pattern.matcher(input);
 		StringBuffer sb = new StringBuffer();
-		// MAC_VALUE±¨ÎÄÖĞÖ»ÓĞÒ»¸ö£¬ËùÒÔ²»ÓÃÑ­»·È¡
+		// MAC_VALUEæŠ¥æ–‡ä¸­åªæœ‰ä¸€ä¸ªï¼Œæ‰€ä»¥ä¸ç”¨å¾ªç¯å–
 		if (matcher.find()) {
 			String tmp = matcher.group();
 			String src = tmp.substring(tmp.lastIndexOf(">") + 1, tmp.length());
@@ -271,7 +271,7 @@ public class LogAnalyse {
 			this.AnaLog_bw.write(msg);
 			this.AnaLog_bw.newLine();
 		} catch (IOException e) {
-			System.out.println("·ÖÎö³ÌĞòµÄÈÕÖ¾ÎÄ¼şĞ´ÈëÒì³£");
+			System.out.println("åˆ†æç¨‹åºçš„æ—¥å¿—æ–‡ä»¶å†™å…¥å¼‚å¸¸");
 		}
 	}
 
@@ -280,7 +280,7 @@ public class LogAnalyse {
 			this.AnaResult_bw.write(msg);
 			this.AnaResult_bw.newLine();
 		} catch (IOException e) {
-			System.out.println("·ÖÎö½á¹ûÎÄ¼şĞ´ÈëÒì³£");
+			System.out.println("åˆ†æç»“æœæ–‡ä»¶å†™å…¥å¼‚å¸¸");
 		}
 	}
 
@@ -300,7 +300,7 @@ public class LogAnalyse {
 	}
 
 	/*
-	 * Ê±¼ä±íÊ¾·½Ê½×ª»»
+	 * æ—¶é—´è¡¨ç¤ºæ–¹å¼è½¬æ¢
 	 */
 	static public String changeTimeLong2String(long tinmeIn) {
 		long day = tinmeIn / 1000 / 3600 / 24;
@@ -308,11 +308,11 @@ public class LogAnalyse {
 		long minute = ((tinmeIn / 1000) % 3600) / 60;
 		long second = ((tinmeIn / 1000) % 60);
 		long ms = tinmeIn % 1000;
-		return (day + "Ìì" + hour + "Ê±" + minute + "·Ö" + second + "Ãë" + ms + "ºÁÃë");
+		return (day + "å¤©" + hour + "æ—¶" + minute + "åˆ†" + second + "ç§’" + ms + "æ¯«ç§’");
 	}
 
 	/*
-	 * ¼ÆËãÏß³ÌÆğÖ¹Ê±¼ä²î
+	 * è®¡ç®—çº¿ç¨‹èµ·æ­¢æ—¶é—´å·®
 	 */
 	public String calTimeSpace(String startTime, String endTime) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat(
@@ -327,7 +327,7 @@ public class LogAnalyse {
 
 			timeSpace = end.getTime() - start.getTime();
 		} catch (Exception e) {
-			System.out.println("ÈÕÆÚ¸ñÊ½×ª»»Òì³£");
+			System.out.println("æ—¥æœŸæ ¼å¼è½¬æ¢å¼‚å¸¸");
 		}
 
 		long day = timeSpace / 1000 / 3600 / 24;
@@ -337,7 +337,7 @@ public class LogAnalyse {
 		long ms = timeSpace % 1000;
 
 		if (day > 0) {
-			hour = 24; // Ê±¼ä²îÒì³££¬¸³¸ö¼«¶ËÖµ¡£
+			hour = 24; // æ—¶é—´å·®å¼‚å¸¸ï¼Œèµ‹ä¸ªæç«¯å€¼ã€‚
 		}
 
 		String result = Long.toString(hour) + ":" + Long.toString(minute) + ":"
@@ -346,7 +346,7 @@ public class LogAnalyse {
 	}
 
 	/*
-	 * Ê±¼ä×ª»»ÎªºÁÃë
+	 * æ—¶é—´è½¬æ¢ä¸ºæ¯«ç§’
 	 */
 	private String dateSwitchToMs(String timeIn) {
 		String timeTmp = timeIn.replace(",", ":");
@@ -358,7 +358,7 @@ public class LogAnalyse {
 	}
 
 	/*
-	 * ½«Í³¼Æ½á¹û¼ÇÂ¼µ½ÎÄ¼ş
+	 * å°†ç»Ÿè®¡ç»“æœè®°å½•åˆ°æ–‡ä»¶
 	 */
 	public void recordStaticResult(boolean islastFile) {
 		String msg = null;
@@ -369,11 +369,11 @@ public class LogAnalyse {
 			String val = this.threadMap.get(id).toString();
 
 			if (!val.contains("|")) {
-				// ×Ö·û´®Ã»ÓĞ´Ë·ûºÅËµÃ÷Ã»ÓĞÕÒµ½¸ÃÏß³Ì½áÊøµÄ±¨ÎÄ¡£
+				// å­—ç¬¦ä¸²æ²¡æœ‰æ­¤ç¬¦å·è¯´æ˜æ²¡æœ‰æ‰¾åˆ°è¯¥çº¿ç¨‹ç»“æŸçš„æŠ¥æ–‡ã€‚
 				if (islastFile) {
-					String logMsg = "Ïß³Ì("
+					String logMsg = "çº¿ç¨‹("
 							+ id
-							+ ")Ã»ÓĞÕÒµ½½áÊø±¨ÎÄ,Ïß³Ì¿ªÊ¼Ê±¼ä["
+							+ ")æ²¡æœ‰æ‰¾åˆ°ç»“æŸæŠ¥æ–‡,çº¿ç¨‹å¼€å§‹æ—¶é—´["
 							+ val
 							+ "]"
 							+ "   in file:"
@@ -412,7 +412,7 @@ public class LogAnalyse {
 	}
 
 	/*
-	 * Í³¼ÆÈÕÖ¾ÖĞ³öÏÖµÄÏß³Ì¼°Ã¿¸öÏß³ÌµÄÖ´ĞĞÊ±¼ä
+	 * ç»Ÿè®¡æ—¥å¿—ä¸­å‡ºç°çš„çº¿ç¨‹åŠæ¯ä¸ªçº¿ç¨‹çš„æ‰§è¡Œæ—¶é—´
 	 */
 	public void threadStatistic(String fileNameRd) {
 		this.fileNameRd = fileNameRd;
@@ -432,7 +432,7 @@ public class LogAnalyse {
 		try {
 			br = new BufferedReader(new InputStreamReader(fis, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("ÎÄ¼ş¶ÁÈë×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("æ–‡ä»¶è¯»å…¥å­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 
@@ -448,7 +448,7 @@ public class LogAnalyse {
 			if (null != lineOfFile) {
 				if (lineOfFile.contains(matchString_start)) {
 
-					// System.out.print(tmp.substring(0,23)); //±¨ÎÄ´òÓ¡Ê±¼ä¡£
+					// System.out.print(tmp.substring(0,23)); //æŠ¥æ–‡æ‰“å°æ—¶é—´ã€‚
 					// int firstIndex = tmp.indexOf("[");
 					// int secendIndex = tmp.indexOf("]");
 					// System.out.println(tmp.substring(firstIndex+1 ,
@@ -489,12 +489,12 @@ public class LogAnalyse {
 					// add end
 
 					if (this.threadMap.containsKey(threadName)) {
-						// Ïß³ÌºÅÒÑ¾­³öÏÖ¹ı
+						// çº¿ç¨‹å·å·²ç»å‡ºç°è¿‡
 						logMsg = "("
 								+ threadName
 								+ ")"
 								+ svrInfo
-								+ "ÖØ¸´³öÏÖ£¬ÖØ¸´Ê±¼ä["
+								+ "é‡å¤å‡ºç°ï¼Œé‡å¤æ—¶é—´["
 								+ startTime
 								+ "]"
 								+ "   in file:"
@@ -557,10 +557,10 @@ public class LogAnalyse {
 
 						// /////////////////////////////////
 					} else {
-						// Ïß³Ì½áÊø±¨ÎÄ³öÏÖÇ°Ã»ÓĞ¸ÃÏß³ÌÆô¶¯µÄ±¨ÎÄ
+						// çº¿ç¨‹ç»“æŸæŠ¥æ–‡å‡ºç°å‰æ²¡æœ‰è¯¥çº¿ç¨‹å¯åŠ¨çš„æŠ¥æ–‡
 						logMsg = "["
 								+ threadName
-								+ "]Ã»ÓĞÕÒµ½ ¿ªÊ¼Ê±¼ä£¬½áÊøÊ±¼ä["
+								+ "]æ²¡æœ‰æ‰¾åˆ° å¼€å§‹æ—¶é—´ï¼Œç»“æŸæ—¶é—´["
 								+ endTime
 								+ "]"
 								+ "   in file:"
@@ -573,14 +573,14 @@ public class LogAnalyse {
 				}
 			}// end of if (null != lineOfFile)
 			else {
-				break; // ÎÄ¼ş¶ÁÈ¡½áÊø
+				break; // æ–‡ä»¶è¯»å–ç»“æŸ
 			}
 		} // end of while
 
 	} // end of threadStatistic()
 
 	/*
-	 * ÅĞ¶ÏÏß³ÌÊÇ·ñÍ¬Ê±´æÔÚ
+	 * åˆ¤æ–­çº¿ç¨‹æ˜¯å¦åŒæ—¶å­˜åœ¨
 	 */
 	private boolean isConcurrence(String start_ori, String end_ori,
 			String start_cmp, String end_cmp) {
@@ -594,12 +594,12 @@ public class LogAnalyse {
 			end_l_ori = dateFormat.parse(end_ori).getTime();
 			end_l_cmp = dateFormat.parse(end_cmp).getTime();
 		} catch (Exception e) {
-			System.out.println("Í³¼Æ²¢·¢Ïß³Ì¸öÊıÊ± ÈÕÆÚ¸ñÊ½×ª»»Òì³£" + e);
+			System.out.println("ç»Ÿè®¡å¹¶å‘çº¿ç¨‹ä¸ªæ•°æ—¶ æ—¥æœŸæ ¼å¼è½¬æ¢å¼‚å¸¸" + e);
 		}
 
 		if (((start_l_ori >= start_l_cmp) && (start_l_ori <= end_l_cmp))
 				|| ((end_l_ori >= start_l_cmp) && (end_l_ori <= end_l_cmp))) {
-			// ¿ªÊ¼»òÖÕÖ¹Ê±¼äÂäÔÚ²ÎÓë¶Ô±ÈµÄÏß³ÌµÄÇø¼äÀï
+			// å¼€å§‹æˆ–ç»ˆæ­¢æ—¶é—´è½åœ¨å‚ä¸å¯¹æ¯”çš„çº¿ç¨‹çš„åŒºé—´é‡Œ
 			return true;
 		} else {
 			return false;
@@ -607,12 +607,12 @@ public class LogAnalyse {
 	}
 
 	/*
-	 * ²¢·¢Ïß³Ì¸öÊıÍ³¼Æ Í³¼ÆÃ¿Ò»¸öÏß³Ì´æ»îÆÚ¼äÍ¬Ê±´æÔÚµÄÏß³Ì¸öÊı
+	 * å¹¶å‘çº¿ç¨‹ä¸ªæ•°ç»Ÿè®¡ ç»Ÿè®¡æ¯ä¸€ä¸ªçº¿ç¨‹å­˜æ´»æœŸé—´åŒæ—¶å­˜åœ¨çš„çº¿ç¨‹ä¸ªæ•°
 	 */
 	private void cocorrentThreadStatistic(String fileNameIn, String fileNameOut) {
 		FileInputStream fis = null;
-		Map<String, String> threadMap_ori = new ConcurrentHashMap<String, String>(); // ÓÃÓÚÖ÷Ñ­»·
-		Map<String, String> threadMap_cmp = new ConcurrentHashMap<String, String>(); // ÓÃÓÚÖØ¸´±éÀú²éÕÒ²¢·¢Ïß³Ì
+		Map<String, String> threadMap_ori = new ConcurrentHashMap<String, String>(); // ç”¨äºä¸»å¾ªç¯
+		Map<String, String> threadMap_cmp = new ConcurrentHashMap<String, String>(); // ç”¨äºé‡å¤éå†æŸ¥æ‰¾å¹¶å‘çº¿ç¨‹
 
 		int numOfthreadFinished = 0;
 
@@ -628,7 +628,7 @@ public class LogAnalyse {
 		try {
 			br = new BufferedReader(new InputStreamReader(fis, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("²¢·¢ÊıÍ³¼ÆÎÄ¼ş¶ÁÈë×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("å¹¶å‘æ•°ç»Ÿè®¡æ–‡ä»¶è¯»å…¥å­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 
@@ -644,7 +644,7 @@ public class LogAnalyse {
 		try {
 			bw = new BufferedWriter(new OutputStreamWriter(fos, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("ÎÄ¼şÊä³ö×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("æ–‡ä»¶è¾“å‡ºå­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 
@@ -684,7 +684,7 @@ public class LogAnalyse {
 			String end_ori = val_ori.substring((val_ori.indexOf("|") + 1),
 					val_ori.length());
 			Iterator<String> it_cmp = Key_cmp.iterator();
-			int num = 0; // ²¢·¢µÄÏß³Ì¸öÊı¼ÆÊı //
+			int num = 0; // å¹¶å‘çš„çº¿ç¨‹ä¸ªæ•°è®¡æ•° //
 			String writeMsg = null;
 			for (; it_cmp.hasNext();) {
 				String id_cmp = it_cmp.next().toString();
@@ -694,7 +694,7 @@ public class LogAnalyse {
 						val_cmp.length());
 
 				if ((id_ori.equals(id_cmp)) && (start_ori.endsWith(start_cmp))) {
-					// ±éÀúÊ±Í¬ÑùµÄÏß³Ì»á×Ô¼ººÍ×Ô¼º±È½Ï£¬ÌŞ³ıÕâÖÖÇé¿ö¡£
+					// éå†æ—¶åŒæ ·çš„çº¿ç¨‹ä¼šè‡ªå·±å’Œè‡ªå·±æ¯”è¾ƒï¼Œå‰”é™¤è¿™ç§æƒ…å†µã€‚
 					continue;
 				} else if (isConcurrence(start_ori, end_ori, start_cmp, end_cmp)) {
 					num++;
@@ -702,15 +702,15 @@ public class LogAnalyse {
 				}
 			}// end of for(;it_cmp.hasNext();)
 
-			writeMsg = "Óë¿ªÊ¼Ê±¼äÔÚ[" + start_ori + "]µÄÏß³Ì[" + id_ori + "]Í¬Ê±´æÔÚµÄÏß³Ì¹²ÓĞ["
-					+ String.valueOf(num) + "]¸ö Ïß³ÌºÅÎª " + writeMsg;
+			writeMsg = "ä¸å¼€å§‹æ—¶é—´åœ¨[" + start_ori + "]çš„çº¿ç¨‹[" + id_ori + "]åŒæ—¶å­˜åœ¨çš„çº¿ç¨‹å…±æœ‰["
+					+ String.valueOf(num) + "]ä¸ª çº¿ç¨‹å·ä¸º " + writeMsg;
 
 			if (num > 0) {
 				try {
 					bw.write(writeMsg);
 					bw.newLine();
 				} catch (Exception e) {
-					System.out.println("²¢·¢ÊıÍ³¼ÆĞ´ÎÄ¼şÒì³£" + e);
+					System.out.println("å¹¶å‘æ•°ç»Ÿè®¡å†™æ–‡ä»¶å¼‚å¸¸" + e);
 				}
 			}
 
@@ -731,14 +731,14 @@ public class LogAnalyse {
 			bw.close();
 			fos.close();
 		} catch (Exception e) {
-			System.out.println("²¢·¢ÊıÍ³¼Æ file close error");
+			System.out.println("å¹¶å‘æ•°ç»Ÿè®¡ file close error");
 		}
 
-		System.out.print("²¢·¢ÊıÍ³¼Æ calculate finished\n");
+		System.out.print("å¹¶å‘æ•°ç»Ÿè®¡ calculate finished\n");
 	}
 
 	/*
-	 * ÅĞ¶Ïµ±Ç°Ê±¼äÔÚÊ±¼äÇø¼äÖĞµÄÄÄ¸öÆ¬¶ÎÖĞ ·µ»ØµÄÖµÎª Æ¬¶ÎĞòºÅ¼Ó1 £¬Èô·µ»Ø0 ËµÃ÷µ±Ç°Ê±¼ä²»ÔÚ×ÜÊ±¼äÇø¼äÄÚ
+	 * åˆ¤æ–­å½“å‰æ—¶é—´åœ¨æ—¶é—´åŒºé—´ä¸­çš„å“ªä¸ªç‰‡æ®µä¸­ è¿”å›çš„å€¼ä¸º ç‰‡æ®µåºå·åŠ 1 ï¼Œè‹¥è¿”å›0 è¯´æ˜å½“å‰æ—¶é—´ä¸åœ¨æ€»æ—¶é—´åŒºé—´å†…
 	 */
 	private long indexOftime(String startTime, String endTime,
 			long timeSpaceInSecond, String timeIn) {
@@ -753,7 +753,7 @@ public class LogAnalyse {
 			endTime_l = dfmt.parse(endTime).getTime();
 			timeIn_l = dfmt.parse(timeIn).getTime();
 		} catch (Exception e) {
-			System.out.println("Ê±¼ä¸ñÊ½×ª»»Òì³£" + e);
+			System.out.println("æ—¶é—´æ ¼å¼è½¬æ¢å¼‚å¸¸" + e);
 		}
 
 		if ((timeIn_l < startTime_l) || (timeIn_l > endTime_l)) {
@@ -766,13 +766,13 @@ public class LogAnalyse {
 	}
 
 	/*
-	 * Í³¼ÆÄ³Ê±¼ä¼ä¸ôÄÚ³öÏÖµÄÏß³ÌÊıÄ¿£¬Ê±¼ä´°È«´°»¬¶¯£¬ÒÔÏß³ÌÆğÊ¼Í³¼Æ¡£¶ÔAnalyseLogÖĞ¼ÇÂ¼µÄÃ»ÓĞÕÒµ½ÆğÊ¼Ê±¼äµÄÏß³ÌÔòÓÃÖÕÖ¹Ê±¼äÍ³¼Æ
+	 * ç»Ÿè®¡æŸæ—¶é—´é—´éš”å†…å‡ºç°çš„çº¿ç¨‹æ•°ç›®ï¼Œæ—¶é—´çª—å…¨çª—æ»‘åŠ¨ï¼Œä»¥çº¿ç¨‹èµ·å§‹ç»Ÿè®¡ã€‚å¯¹AnalyseLogä¸­è®°å½•çš„æ²¡æœ‰æ‰¾åˆ°èµ·å§‹æ—¶é—´çš„çº¿ç¨‹åˆ™ç”¨ç»ˆæ­¢æ—¶é—´ç»Ÿè®¡
 	 */
 	private void threadCountInTimeSpace(String threadInfoFileName,
 			String analyseLogFileName, String cntInTimespaceResultFname,
 			String startTime, String endTime, long timeSpaceInSecond) {
 
-		// ³õÊ¼»¯ map
+		// åˆå§‹åŒ– map
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss,SSS");
 
 		long start_init = 0;
@@ -781,14 +781,14 @@ public class LogAnalyse {
 			start_init = fmt.parse(startTime).getTime();
 			end_init = fmt.parse(endTime).getTime();
 		} catch (Exception e) {
-			System.out.println("map ³õÊ¼»¯ Ê±ÈÕÆÚ¸ñÊ½×ª»»´íÎó");
+			System.out.println("map åˆå§‹åŒ– æ—¶æ—¥æœŸæ ¼å¼è½¬æ¢é”™è¯¯");
 		}
 		long space = timeSpaceInSecond * 1000;
 		int numOfSpace = (int) ((end_init - start_init) / space + 1);
 
 		int cnt[] = new int[numOfSpace];
 
-		// ³õÊ¼»¯½áÊø
+		// åˆå§‹åŒ–ç»“æŸ
 
 		FileInputStream fis = null;
 		try {
@@ -802,7 +802,7 @@ public class LogAnalyse {
 		try {
 			br = new BufferedReader(new InputStreamReader(fis, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("ÎÄ¼ş¶ÁÈë×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("æ–‡ä»¶è¯»å…¥å­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 
@@ -823,7 +823,7 @@ public class LogAnalyse {
 				long index = indexOftime(startTime, endTime, timeSpaceInSecond,
 						timeIn);
 				if (index > 0) {
-					cnt[(int) (index - 1)]++;// ¼ÆËãindexÊ±·µ»ØÖµ¼ÓÁË1£¬ËùÒÔÕâÀï¼õÈ¥¡£
+					cnt[(int) (index - 1)]++;// è®¡ç®—indexæ—¶è¿”å›å€¼åŠ äº†1ï¼Œæ‰€ä»¥è¿™é‡Œå‡å»ã€‚
 				}
 			} else {
 				break;
@@ -837,8 +837,8 @@ public class LogAnalyse {
 		} catch (Exception e) {
 			System.out.println(threadInfoFileName + "file close error");
 		}
-		// ////////Ïß³ÌÆğÖ¹Õı³£ÎÄ¼şÍ³¼ÆÍê±Ï
-		// ///////////////////////Í³¼ÆÆğÖ¹Ê±¼äÎ´Æ¥ÅäµÄÏß³Ì
+		// ////////çº¿ç¨‹èµ·æ­¢æ­£å¸¸æ–‡ä»¶ç»Ÿè®¡å®Œæ¯•
+		// ///////////////////////ç»Ÿè®¡èµ·æ­¢æ—¶é—´æœªåŒ¹é…çš„çº¿ç¨‹
 		fis = null;
 		try {
 			fis = new FileInputStream(analyseLogFileName);
@@ -851,7 +851,7 @@ public class LogAnalyse {
 		try {
 			br = new BufferedReader(new InputStreamReader(fis, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("ÎÄ¼ş¶ÁÈë×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("æ–‡ä»¶è¯»å…¥å­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 
@@ -871,7 +871,7 @@ public class LogAnalyse {
 				long index = indexOftime(startTime, endTime, timeSpaceInSecond,
 						timeIn);
 				if (index > 0) {
-					cnt[(int) (index - 1)]++;// ¼ÆËãindexÊ±·µ»ØÖµ¼ÓÁË1£¬ËùÒÔÕâÀï¼õÈ¥¡£
+					cnt[(int) (index - 1)]++;// è®¡ç®—indexæ—¶è¿”å›å€¼åŠ äº†1ï¼Œæ‰€ä»¥è¿™é‡Œå‡å»ã€‚
 				}
 			} else {
 				break;
@@ -886,7 +886,7 @@ public class LogAnalyse {
 			System.out.println(analyseLogFileName + "file close error");
 		}
 
-		// /////Í³¼Æ½áÊø ½«Í³¼Æ½á¹ûĞ´ÈëÎÄ¼ş
+		// /////ç»Ÿè®¡ç»“æŸ å°†ç»Ÿè®¡ç»“æœå†™å…¥æ–‡ä»¶
 
 		FileOutputStream fos = null;
 		try {
@@ -900,19 +900,19 @@ public class LogAnalyse {
 		try {
 			bw = new BufferedWriter(new OutputStreamWriter(fos, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("ÎÄ¼şÊä³ö×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("æ–‡ä»¶è¾“å‡ºå­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 
 		String msg = null;
 		try {
-			msg = "Í³¼Æ¿ªÊ¼Ê±¼ä[" + startTime + "]½áÊøÊ±¼ä[" + endTime + "]Ê±¼ä¼ä¸ô£º"
-					+ String.valueOf(timeSpaceInSecond) + "Ãë";
+			msg = "ç»Ÿè®¡å¼€å§‹æ—¶é—´[" + startTime + "]ç»“æŸæ—¶é—´[" + endTime + "]æ—¶é—´é—´éš”ï¼š"
+					+ String.valueOf(timeSpaceInSecond) + "ç§’";
 
 			bw.write(msg);
 			bw.newLine();
 
-			// ÂÖÑ¯Êı×éÖĞµÄÊı¾İ
+			// è½®è¯¢æ•°ç»„ä¸­çš„æ•°æ®
 			for (int i = 0; i < cnt.length; i++) {
 				SimpleDateFormat df = new SimpleDateFormat(
 						"yyyy-MM-dd HH:mm:ss,SSS");
@@ -921,7 +921,7 @@ public class LogAnalyse {
 				msg = String.valueOf(i)
 						+ ","
 						+ String.valueOf(cnt[i])
-						+ ",¿ªÊ¼Ê±¼äÎª["
+						+ ",å¼€å§‹æ—¶é—´ä¸º["
 						+ df.format(new Date(start + i * timeSpaceInSecond
 								* 1000)) + "]";
 
@@ -929,9 +929,9 @@ public class LogAnalyse {
 				bw.newLine();
 			}
 		} catch (IOException e) {
-			System.out.println(cntInTimespaceResultFname + "ÎÄ¼şĞ´ÈëIOÒì³£" + e);
+			System.out.println(cntInTimespaceResultFname + "æ–‡ä»¶å†™å…¥IOå¼‚å¸¸" + e);
 		} catch (Exception e) {
-			System.out.println(cntInTimespaceResultFname + "ÎÄ¼şĞ´Èë·ÇIOÆäËûÒì³£" + e);
+			System.out.println(cntInTimespaceResultFname + "æ–‡ä»¶å†™å…¥éIOå…¶ä»–å¼‚å¸¸" + e);
 		}
 
 		try {
@@ -939,13 +939,13 @@ public class LogAnalyse {
 			bw.close();
 			fos.close();
 		} catch (Exception e) {
-			System.out.println("Ê±¼äÇø¼äÄÚÏß³ÌÍ³¼ÆÖĞ file close error");
+			System.out.println("æ—¶é—´åŒºé—´å†…çº¿ç¨‹ç»Ÿè®¡ä¸­ file close error");
 		}
 
 	}
 
 	/***
-	 * ¸ù¾İÍ³¼Æ½á¹ûÉú³É²å±íÓï¾ä
+	 * æ ¹æ®ç»Ÿè®¡ç»“æœç”Ÿæˆæ’è¡¨è¯­å¥
 	 */
 
 	public static void sqlGen(String tbName, String inFileName,
@@ -962,7 +962,7 @@ public class LogAnalyse {
 		try {
 			bw = new BufferedWriter(new OutputStreamWriter(fos, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("´´½¨SQLÎÄ¼şÊ± ÎÄ¼şÊä³ö×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("åˆ›å»ºSQLæ–‡ä»¶æ—¶ æ–‡ä»¶è¾“å‡ºå­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 
@@ -979,7 +979,7 @@ public class LogAnalyse {
 		try {
 			br = new BufferedReader(new InputStreamReader(fis, "UTF-8"));
 		} catch (UnsupportedEncodingException e1) {
-			System.out.println("ÎÄ¼ş¶ÁÈë×Ö·û¼¯×ª»»Òì³£");
+			System.out.println("æ–‡ä»¶è¯»å…¥å­—ç¬¦é›†è½¬æ¢å¼‚å¸¸");
 			e1.printStackTrace();
 		}
 
@@ -1017,7 +1017,7 @@ public class LogAnalyse {
 					bw.write(lineOfFile);
 					bw.newLine();
 				} catch (IOException e) {
-					System.out.println("SQLÎÄ¼şĞ´ÈëÒì³£");
+					System.out.println("SQLæ–‡ä»¶å†™å…¥å¼‚å¸¸");
 				}
 
 			} else {
@@ -1026,10 +1026,10 @@ public class LogAnalyse {
 					bw.write("COMMIT;");
 					bw.newLine();
 				} catch (IOException e) {
-					System.out.println("SQLÎÄ¼şCommitĞ´ÈëÒì³£");
+					System.out.println("SQLæ–‡ä»¶Commitå†™å…¥å¼‚å¸¸");
 				}
 
-				break; // ÎÄ¼ş¶ÁÈ¡½áÊø
+				break; // æ–‡ä»¶è¯»å–ç»“æŸ
 			}
 
 		}// end of while
@@ -1049,118 +1049,118 @@ public class LogAnalyse {
 
 	public static void main(String[] args) {
 
-		String filePath = "D:\\log\\20141103\\core4\\";
-		String filePathTmp = filePath + "\\tmp\\";
-		String tmpfileNameWr = null;
-		File destFile = new File(filePathTmp.substring(0,
-				(filePathTmp.lastIndexOf("\\"))));
-		destFile.mkdirs();
-
-		String modifyKeyWord = "2014-11-03";
-
-		LogAnalyse.fetchLogName(filePath);
-
-		System.out.println(LogAnalyse.fileName);
-		System.out.println(LogAnalyse.maxNum);
-		System.out.println(LogAnalyse.minNum);
-
-		for (int i = LogAnalyse.maxNum; i >= LogAnalyse.minNum; i--) {
-			String fileNameRdDyn = LogAnalyse.fileName + "."
-					+ String.valueOf(i);
-
-			tmpfileNameWr = "\\tmp\\tmp_" + fileNameRdDyn;
-			LogAnalyse.switchLog(filePath + fileNameRdDyn, filePath
-					+ tmpfileNameWr, modifyKeyWord);
-		}
-
-		tmpfileNameWr = "\\tmp\\tmp_" + LogAnalyse.fileName;
-		LogAnalyse.switchLog(filePath + LogAnalyse.fileName, filePath
-				+ tmpfileNameWr, modifyKeyWord);
-
-		System.out.println("tmp file finish");
-
-		// String fileNameRd =
-		// "D:\\hejie\\work\\backup\\¹¤×÷°´ÕÕÈÕÆÚ¼ÇÂ¼\\20131223Íø¹Ø\\Éú²úÇåËã±¨ÎÄ½ÓÊÕÒì³£\\1123Íø¹Ø\\log\\beps.log";
-		// String fileNameRd = "D:\\log\\core1\\test\\tmp\\tmp_Ensemble1.log";
-
-		String fileNameRd = filePath + tmpfileNameWr;
-		String fileNameWr = "ThreadStatistic.csv";
-		String analyseLogFilename = "AnalyseLog.dat";
-		String conCurrentOriFileName = "ThreadStatistic.dat";
-		String conCurrentResultFileName = "coCurrentCount.dat";
-
-		String timeSpaceThreadCntFileName = "rhreadCntInTimeSpace.csv";
-
-		String startTime = "2014-05-27 00:12:53,342"; // Í³¼ÆÊ±¼ä¶ÎÄÚ½»Ò×ÊıÁ¿µÄÆğÊ¼Ê±¼ä
-		String endTime = "2014-05-27 23:18:36,731"; // Í³¼ÆÊ±¼ä¶ÎÄÚ½»Ò×ÊıÁ¿µÄÖÕÖ¹Ê±¼ä
-		long timeSpaceInSecond = 60; // »¬´°Í³¼ÆÊ±¼ä¼ä¸ô Ãë
-
-		LogAnalyse loganals = new LogAnalyse();
-
-		// ///////////////////////////////////////////////////////////////////
-
-		// //////////////////// ´ÓÈÕÖ¾ÎÄ¼şÖĞÌáÈ¡Ïß³ÌĞÅÏ¢
-		// ///////////////////////////////////////////
-
-		final int fileNum = 162; // ÈÕÖ¾ÎÄ¼ş·ûºÅ"."ºó×î´óµÄĞòºÅ Í³¼Æ¸ÃÎÄ¼şµ½×î½üµÄÈÕÖ¾ //
-
-		String matchString_start = "(TcpListenerCbsd.java:605)"; // Ïß³ÌÆğÊ¼Ê±¿Ì
-																	// ÈÕÖ¾ÖĞµÄ±æÊ¶ĞÅÏ¢
-		String matchString_end = "(TcpListenerCbsd.java:643)"; // Ïß³ÌÖÕÖ¹Ê±¿Ì
-																// ÈÕÖ¾ÖĞµÄ±æÊ¶ĞÅÏ¢
-
-		long start = System.currentTimeMillis();
-
-		loganals.init(fileNameWr, analyseLogFilename, matchString_start,
-				matchString_end);
-
-		for (int i = LogAnalyse.maxNum; i >= LogAnalyse.minNum; i--) {
-			String fileNameRdDyn = fileNameRd + "." + String.valueOf(i);
-			System.out.println(fileNameRdDyn);
-			loganals.threadStatistic(fileNameRdDyn);
-			loganals.recordStaticResult(false);
-		}
-
-		loganals.threadStatistic(fileNameRd);
-
-		loganals.recordStaticResult(true);
-
-		loganals.finish();
-
-		long end = System.currentTimeMillis();
-		System.out.println("´ÓÈÕÖ¾ÖĞÌáÈ¡ÎÄ¼şÍê³É ºÄÊ±:"
-				+ LogAnalyse.changeTimeLong2String(end - start));
-
-		// /////////////////////////////////////////////////////////////////////////////////////////////
-		// Í³¼ÆÉè¶¨Ê±¼ä¼ä¸ôÄÚ´æÔÚµÄÏß³ÌÊı
-
-		/*
-		 * long start2 = System.currentTimeMillis();
-		 * 
-		 * loganals.threadCountInTimeSpace(conCurrentOriFileName,
-		 * analyseLogFilename, timeSpaceThreadCntFileName, startTime, endTime,
-		 * timeSpaceInSecond);
-		 * 
-		 * long end2 = System.currentTimeMillis();
-		 * System.out.println("Í³¼ÆÉè¶¨Ê±¼ä¼ä¸ôÄÚ´æÔÚµÄÏß³ÌÊıºÄÊ±£º "
-		 * +LogAnalyse.changeTimeLong2String(end2-start2));
-		 */
-
-		// //////////////////////////////////////////////////////////////////////////////////////////////////
-		// Í³¼ÆÓëÃ¿Ò»¸öÏß³ÌÍ¬Ê±´æÔÚµÄÏß³Ì¸öÊı ¸Ã²½ºÄÊ±½Ï³¤£¬Ã»ÓĞĞèÒª¿ÉÒÔ×¢ÊÍµôÏÈ²»Ö´ĞĞ¡£
-
-		/*
-		 * long start3 = System.currentTimeMillis();
-		 * loganals.cocorrentThreadStatistic(conCurrentOriFileName,
-		 * conCurrentResultFileName); long end3 = System.currentTimeMillis();
-		 * 
-		 * System.out.println("Í³¼ÆÓëÃ¿Ò»¸öÏß³ÌÍ¬Ê±´æÔÚµÄÏß³Ì¸öÊıºÄÊ±£º"
-		 * +LogAnalyse.changeTimeLong2String(end3-start3));
-		 */
-
-		// Éú³Éinset sql ¸Ã²¿·Ö¸ù¾İĞèÇó¶¨ÖÆ
-		
-		LogAnalyse.sqlGen("LOGRESULT", fileNameWr, "LOGRESULT_insert.sql");
+//		String filePath = "D:\\log\\20141103\\core4\\";
+//		String filePathTmp = filePath + "\\tmp\\";
+//		String tmpfileNameWr = null;
+//		File destFile = new File(filePathTmp.substring(0,
+//				(filePathTmp.lastIndexOf("\\"))));
+//		destFile.mkdirs();
+//
+//		String modifyKeyWord = "2014-11-03";
+//
+//		LogAnalyse.fetchLogName(filePath);
+//
+//		System.out.println(LogAnalyse.fileName);
+//		System.out.println(LogAnalyse.maxNum);
+//		System.out.println(LogAnalyse.minNum);
+//
+//		for (int i = LogAnalyse.maxNum; i >= LogAnalyse.minNum; i--) {
+//			String fileNameRdDyn = LogAnalyse.fileName + "."
+//					+ String.valueOf(i);
+//
+//			tmpfileNameWr = "\\tmp\\tmp_" + fileNameRdDyn;
+//			LogAnalyse.switchLog(filePath + fileNameRdDyn, filePath
+//					+ tmpfileNameWr, modifyKeyWord);
+//		}
+//
+//		tmpfileNameWr = "\\tmp\\tmp_" + LogAnalyse.fileName;
+//		LogAnalyse.switchLog(filePath + LogAnalyse.fileName, filePath
+//				+ tmpfileNameWr, modifyKeyWord);
+//
+//		System.out.println("tmp file finish");
+//
+//		// String fileNameRd =
+//		// "D:\\hejie\\work\\backup\\å·¥ä½œæŒ‰ç…§æ—¥æœŸè®°å½•\\20131223ç½‘å…³\\ç”Ÿäº§æ¸…ç®—æŠ¥æ–‡æ¥æ”¶å¼‚å¸¸\\1123ç½‘å…³\\log\\beps.log";
+//		// String fileNameRd = "D:\\log\\core1\\test\\tmp\\tmp_Ensemble1.log";
+//
+//		String fileNameRd = filePath + tmpfileNameWr;
+//		String fileNameWr = "ThreadStatistic.csv";
+//		String analyseLogFilename = "AnalyseLog.dat";
+//		String conCurrentOriFileName = "ThreadStatistic.dat";
+//		String conCurrentResultFileName = "coCurrentCount.dat";
+//
+//		String timeSpaceThreadCntFileName = "rhreadCntInTimeSpace.csv";
+//
+//		String startTime = "2014-05-27 00:12:53,342"; // ç»Ÿè®¡æ—¶é—´æ®µå†…äº¤æ˜“æ•°é‡çš„èµ·å§‹æ—¶é—´
+//		String endTime = "2014-05-27 23:18:36,731"; // ç»Ÿè®¡æ—¶é—´æ®µå†…äº¤æ˜“æ•°é‡çš„ç»ˆæ­¢æ—¶é—´
+//		long timeSpaceInSecond = 60; // æ»‘çª—ç»Ÿè®¡æ—¶é—´é—´éš” ç§’
+//
+//		LogAnalyse loganals = new LogAnalyse();
+//
+//		// ///////////////////////////////////////////////////////////////////
+//
+//		// //////////////////// ä»æ—¥å¿—æ–‡ä»¶ä¸­æå–çº¿ç¨‹ä¿¡æ¯
+//		// ///////////////////////////////////////////
+//
+//		final int fileNum = 162; // æ—¥å¿—æ–‡ä»¶ç¬¦å·"."åæœ€å¤§çš„åºå· ç»Ÿè®¡è¯¥æ–‡ä»¶åˆ°æœ€è¿‘çš„æ—¥å¿— //
+//
+//		String matchString_start = "(TcpListenerCbsd.java:605)"; // çº¿ç¨‹èµ·å§‹æ—¶åˆ»
+//																	// æ—¥å¿—ä¸­çš„è¾¨è¯†ä¿¡æ¯
+//		String matchString_end = "(TcpListenerCbsd.java:643)"; // çº¿ç¨‹ç»ˆæ­¢æ—¶åˆ»
+//																// æ—¥å¿—ä¸­çš„è¾¨è¯†ä¿¡æ¯
+//
+//		long start = System.currentTimeMillis();
+//
+//		loganals.init(fileNameWr, analyseLogFilename, matchString_start,
+//				matchString_end);
+//
+//		for (int i = LogAnalyse.maxNum; i >= LogAnalyse.minNum; i--) {
+//			String fileNameRdDyn = fileNameRd + "." + String.valueOf(i);
+//			System.out.println(fileNameRdDyn);
+//			loganals.threadStatistic(fileNameRdDyn);
+//			loganals.recordStaticResult(false);
+//		}
+//
+//		loganals.threadStatistic(fileNameRd);
+//
+//		loganals.recordStaticResult(true);
+//
+//		loganals.finish();
+//
+//		long end = System.currentTimeMillis();
+//		System.out.println("ä»æ—¥å¿—ä¸­æå–æ–‡ä»¶å®Œæˆ è€—æ—¶:"
+//				+ LogAnalyse.changeTimeLong2String(end - start));
+//
+//		// /////////////////////////////////////////////////////////////////////////////////////////////
+//		// ç»Ÿè®¡è®¾å®šæ—¶é—´é—´éš”å†…å­˜åœ¨çš„çº¿ç¨‹æ•°
+//
+//		/*
+//		 * long start2 = System.currentTimeMillis();
+//		 * 
+//		 * loganals.threadCountInTimeSpace(conCurrentOriFileName,
+//		 * analyseLogFilename, timeSpaceThreadCntFileName, startTime, endTime,
+//		 * timeSpaceInSecond);
+//		 * 
+//		 * long end2 = System.currentTimeMillis();
+//		 * System.out.println("ç»Ÿè®¡è®¾å®šæ—¶é—´é—´éš”å†…å­˜åœ¨çš„çº¿ç¨‹æ•°è€—æ—¶ï¼š "
+//		 * +LogAnalyse.changeTimeLong2String(end2-start2));
+//		 */
+//
+//		// //////////////////////////////////////////////////////////////////////////////////////////////////
+//		// ç»Ÿè®¡ä¸æ¯ä¸€ä¸ªçº¿ç¨‹åŒæ—¶å­˜åœ¨çš„çº¿ç¨‹ä¸ªæ•° è¯¥æ­¥è€—æ—¶è¾ƒé•¿ï¼Œæ²¡æœ‰éœ€è¦å¯ä»¥æ³¨é‡Šæ‰å…ˆä¸æ‰§è¡Œã€‚
+//
+//		/*
+//		 * long start3 = System.currentTimeMillis();
+//		 * loganals.cocorrentThreadStatistic(conCurrentOriFileName,
+//		 * conCurrentResultFileName); long end3 = System.currentTimeMillis();
+//		 * 
+//		 * System.out.println("ç»Ÿè®¡ä¸æ¯ä¸€ä¸ªçº¿ç¨‹åŒæ—¶å­˜åœ¨çš„çº¿ç¨‹ä¸ªæ•°è€—æ—¶ï¼š"
+//		 * +LogAnalyse.changeTimeLong2String(end3-start3));
+//		 */
+//
+//		// ç”Ÿæˆinset sql è¯¥éƒ¨åˆ†æ ¹æ®éœ€æ±‚å®šåˆ¶
+//		
+//		LogAnalyse.sqlGen("LOGRESULT", fileNameWr, "LOGRESULT_insert.sql");
 		
 		System.out.println("finished ..");
 
